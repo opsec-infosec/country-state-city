@@ -24,7 +24,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/harpreetkhalsagtbit/country-state-city.git"
+		"url": "git+https:///github.com/opsec-infosec/country-state-city.git"
 	},
 	"husky": {
 		"hooks": {

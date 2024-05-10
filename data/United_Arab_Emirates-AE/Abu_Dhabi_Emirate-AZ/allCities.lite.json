@@ -1,25 +1,15 @@
 [
    {
-      "name": "Abu Dhabi Island and Internal Islands City",
+      "name": "Abu Dhabi City",
       "countryCode": "AE",
       "stateCode": "AZ"
    },
-   {
-      "name": "Abu Dhabi Municipality",
-      "countryCode": "AE",
-      "stateCode": "AZ"
-   },
-   {
+    {
       "name": "Al Ain City",
       "countryCode": "AE",
       "stateCode": "AZ"
    },
-   {
-      "name": "Al Ain Municipality",
-      "countryCode": "AE",
-      "stateCode": "AZ"
-   },
-   {
+     {
       "name": "Al Dhafra",
       "countryCode": "AE",
       "stateCode": "AZ"

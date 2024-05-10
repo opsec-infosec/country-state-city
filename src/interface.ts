@@ -37,4 +37,5 @@ export interface ICity {
 	getAllCities?(): ICity[];
 	getCitiesOfState?(): ICity[];
 	getCitiesOfCountry?(): ICity[];
+    getCityofState?(): ICity[];
 }

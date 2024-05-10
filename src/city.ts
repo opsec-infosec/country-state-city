@@ -10,15 +10,18 @@ const KEYS = [
 	"longitude"
 ]
 
+let storeedKeys: string[] = []
+
 let convertedCityList: ICity[] = [];
 // Get a list of all cities.
-function getAllCities(keys: string[]): ICity[] {
-	if (convertedCityList.length) {
+function getAllCities(keys: string[] = KEYS): ICity[] {
+	if (convertedCityList.length && JSON.stringify(KEYS)==JSON.stringify(storeedKeys)) {
 		return convertedCityList;
 	}
 
 	const cityJSON: string[][] = cityList;
-	convertedCityList = convertArrayToObject(keys, cityJSON);
+	convertedCityList = convertArrayToObject(keys ?? KEYS, cityJSON);
+    storeedKeys = keys
 	return (convertedCityList as unknown as ICity[])
 }
 
@@ -28,7 +31,7 @@ function getCityOfState(cityName: string, countryCode: string, stateCode: string
     if (!countryCode) return [];
     if (!cityName) return [];
 
-    const cityList = getAllCities(KEYS)
+    const cityList = getAllCities()
     const city = (cityList as ICity[]).filter((values: { name: string, countryCode: string, stateCode: string }) => {
         return values.countryCode === countryCode && values.stateCode === stateCode && values.name === cityName
     })
@@ -41,7 +44,7 @@ function getCitiesOfState(countryCode: string, stateCode: string): ICity[] {
 	if (!stateCode) return [];
 	if (!countryCode) return [];
 
-	const cityList = getAllCities(KEYS);
+	const cityList = getAllCities();
 	const cities = (cityList as ICity[]).filter((value: { countryCode: string; stateCode: string }) => {
 		return value.countryCode === countryCode && value.stateCode === stateCode;
 	});
@@ -53,7 +56,7 @@ function getCitiesOfState(countryCode: string, stateCode: string): ICity[] {
 function getCitiesOfCountry(countryCode: string): ICity[] | undefined {
 	if (!countryCode) return [];
 
-	const cityList = getAllCities(KEYS);
+	const cityList = getAllCities();
 	const cities = (cityList as ICity[]).filter((value: { countryCode: string }) => {
 		return value.countryCode === countryCode;
 	});

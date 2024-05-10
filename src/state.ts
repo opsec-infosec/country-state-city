@@ -27,9 +27,9 @@ export function getStateByCodeAndCountry(stateCode: string, countryCode: string)
 // to be deprecate
 export function getStateByCode(isoCode: string): IState | undefined {
 	// eslint-disable-next-line no-console
-	console.warn(
-		`WARNING! 'getStateByCode' has been deprecated, please use the new 'getStateByCodeAndCountry' function instead!`,
-	);
+	// console.warn(
+	// 	`WARNING! 'getStateByCode' has been deprecated, please use the new 'getStateByCodeAndCountry' function instead!`,
+	// );
 	if (!isoCode) return undefined;
 
 	return findEntryByCode(stateList, isoCode);
